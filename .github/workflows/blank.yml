@@ -1,0 +1,22 @@
+name: Openwrt-build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+# 检出版本库
+    - name: Checkout
+      uses: actions/checkout@v2
+
+# 运行脚本
+    - name: Run Shell Script
+      run: ./run.sh
+    
+# 输出文件
+    - name: Upload artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: outfile
+        path: ./output
