@@ -11,7 +11,8 @@ github actions编译脚本, 实现api调用不同的shell执行不同功能
 #$repo:库名
 #$shell:运行shell脚本
 #$param:参数,json格式
-curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" \
+curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-preview+json" \
+             -H "Content-Type: application/json" \
              --data '{"event_type":"$shell", "client_payload": $param}'\ 
              https://api.github.com/repos/$user/$repo/dispatches
 ```
@@ -28,7 +29,7 @@ curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-pre
 |文件名|功能|使用|
 |---|---|---|
 |test.json|模拟GITHUB_EVENT_PATH文件,方便本地调试|GITHUB_EVENT_PATH=$PWD/tmp/test.json LOCALTEST=y ./run.sh|
-|curlauto.sh|建议api发送工具|./tmp/curlauto.sh username password type param['{"txt": "hello world", "msg": "nothing"}']|
+|curlauto.sh|建议api发送工具|./tmp/curlauto.sh username password repo type param['{"txt": "hello world", "msg": "nothing"}']|
 
 
 # 头条文章对应说明
