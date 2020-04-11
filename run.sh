@@ -1,16 +1,16 @@
 #!/bin/bash
 
-sudo apt-get update
-sudo apt-get -y install jq
+[ -n "$LOCALTEST" ] || sudo apt-get update
+[ -n "$LOCALTEST" ] || sudo apt-get -y install jq
+LOCALPWD=$PWD
 
 # api变量解析
 jsshell=`cat $GITHUB_EVENT_PATH | jq ".action" | sed 's/\"//g'`
 
-mkdir -p output
-if [ ! -f "./$jsshell.sh" ];then
-    echo "start run $jsshell" >> output/log.txt
-    ./$jsshell.sh output
+mkdir -p $LOCALPWD/output
+if [ -f "./script/$jsshell.sh" ];then
+    echo "start run ./script/$jsshell.sh" >> $LOCALPWD/output/log.txt
+    ./script/$jsshell.sh $LOCALPWD/output
 else
-    echo "not find $jsshell !!" >> output/log.txt
+    echo "not find ./script/$jsshell.sh !!" >> $LOCALPWD/output/log.txt
 fi
-./test.sh

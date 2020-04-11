@@ -17,6 +17,10 @@ curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-pre
              https://api.github.com/repos/$user/$repo/dispatches
 ```
 
+# 其他记录 
+本地测试命令  
+GITHUB_EVENT_PATH=$PWD/tmp/test.json LOCALTEST=y ./run.sh
+
 # 最终脚本共解释
 |脚本名|功能|参数|
 |---|---|---|
