@@ -1,5 +1,6 @@
 # actions
 github actions编译脚本, 实现api调用不同的shell执行不同功能
+关注我的[头条](https://www.toutiao.com/c/user/105101072129/#mid=0)
 
 # 运行轨迹
 .github/workflows/blank.yml -> ./run.sh(此脚本选择最终脚本) -> script中最终脚本  
@@ -35,6 +36,6 @@ curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-pre
 # 头条文章对应说明
 |文章url|版本号|分支|
 |---|---|---|
-|0|ac9fcf46971f70f404272c61883a1856761254e3|/|
-|0|67d7b4fd6456b4157dc31feeaea34f59642b1829|/|
+|https://www.toutiao.com/i6813342317114556931/?group_id=6813342317114556931|ac9fcf46971f70f404272c61883a1856761254e3|/|
+|https://www.toutiao.com/i6814079749422318087/?group_id=6814079749422318087|67d7b4fd6456b4157dc31feeaea34f59642b1829|/|
 
