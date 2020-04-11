@@ -7,12 +7,10 @@ sudo apt-get -y install jq
 jsshell=`cat $GITHUB_EVENT_PATH | jq ".action" | sed 's/\"//g'`
 
 mkdir -p output
-if [ ! -f "$jsshell.sh" ];then
+if [ ! -f "./$jsshell.sh" ];then
     echo "start run $jsshell" >> output/log.txt
+    ./$jsshell.sh output
 else
     echo "not find $jsshell !!" >> output/log.txt
 fi
-
-./test.sh output
-#./openwrt.sh output
-#./socat.sh output
+./test.sh
