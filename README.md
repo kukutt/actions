@@ -13,7 +13,7 @@ github actions编译脚本, 实现api调用不同的shell执行不同功能
 #$shell:运行shell脚本
 #$param:参数,json格式
 curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" \
-             --data '{"event_type":"$shell", "client_payload": $param}' 
+             --data '{"event_type":"$shell", "client_payload": $param}'\ 
              https://api.github.com/repos/$user/$repo/dispatches
 ```
 
