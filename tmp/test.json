@@ -1,8 +1,8 @@
 {
-  "action": "test",
+  "action": "socat",
   "branch": "master",
   "client_payload": {
-    "txt": "helloworld",
-    "msg": "worldhello"
+    "host": "xxxx.com",
+    "port": "8888"
   }
 }
