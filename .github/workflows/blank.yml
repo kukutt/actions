@@ -1,6 +1,6 @@
-name: Openwrt-build
+name: Actions
 
-on: push
+on: repository_dispatch
 
 jobs:
   build:
