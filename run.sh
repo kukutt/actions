@@ -1,7 +1,7 @@
 #!/bin/bash
 
-[ -n "$LOCALTEST" ] || sudo apt-get update
-[ -n "$LOCALTEST" ] || sudo apt-get -y install jq
+[ -n "$LOCALTEST" ] || sudo apt-get update > /dev/null 2>&1
+[ -n "$LOCALTEST" ] || sudo apt-get -y install jq > /dev/null 2>&1
 LOCALPWD=$PWD
 
 # api变量解析

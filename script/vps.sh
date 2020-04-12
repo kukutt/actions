@@ -7,7 +7,6 @@ jssshpwd=`cat $GITHUB_EVENT_PATH | jq ".client_payload.sshpwd" | sed 's/\"//g'`
 jsfrpserver=`cat $GITHUB_EVENT_PATH | jq ".client_payload.frpserver" | sed 's/\"//g'`
 jsfrpport=`cat $GITHUB_EVENT_PATH | jq ".client_payload.frpport" | sed 's/\"//g'`
 jsfrptk=`cat $GITHUB_EVENT_PATH | jq ".client_payload.frptk" | sed 's/\"//g'`
-jstimeout=`cat $GITHUB_EVENT_PATH | jq ".client_payload.timeout" | sed 's/\"//g'`
 
 mkdir -p bin
 # 准备frp
@@ -34,6 +33,12 @@ EOF
 ./bin/frpc -c frpc.ini > /dev/null 2>&1 &
 
 
-echo user[$jssshuser] sleep[$jstimeout]
-sleep $jstimeout
+echo user[$jssshuser]
+sleep 300
+while [ -f "$HOME/run" ]
+do
+    sleep 60
+done
+sleep 60
+
 killall frpc

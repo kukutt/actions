@@ -19,18 +19,22 @@ curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-pre
 ```
 
 # script中最终脚本解释
-|脚本名|功能|参数|
+|脚本名|功能|备注|
 |---|---|---|
 |test.sh|测试|/|
 |openwrt.sh|openwrt编译例程 k3为例|/|
 |socat.sh|反向隧道登录actions,公网ip服务器`./socat file:`tty`,raw,echo=0 tcp-listen:8888`|'{"host": "xxx.com", "port": "8888"}'|
+|ss.sh|查看国外文献工具|/|
+|go.sh|go get 后,下载|/|
+|vps.sh|socat.sh升级版|登录后,touch run可以让脚本保持|
 
 # 测试工具
 测试工具放在./tmp/下  
-|文件名|功能|使用|
+|文件名|功能|备注|
 |---|---|---|
 |test.json|模拟GITHUB_EVENT_PATH文件,方便本地调试|GITHUB_EVENT_PATH=$PWD/tmp/test.json LOCALTEST=y ./run.sh|
 |curlauto.sh|建议api发送工具|./tmp/curlauto.sh username password repo type param['{"txt": "hello world", "msg": "nothing"}']|
+|ss.sh|查看国外文献工具||
 
 
 # 头条文章对应说明
