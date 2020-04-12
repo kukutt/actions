@@ -1,8 +1,15 @@
 {
-  "action": "socat",
+  "action": "ss",
   "branch": "master",
   "client_payload": {
-    "host": "xxxx.com",
-    "port": "8888"
+    "sshport": "18822",
+    "sshpwd": "Accde78yj",
+    "frpserver": "xxx.com",
+    "frpport": "7008",
+    "frptk": "12345678",
+    "ssport": "8888",
+    "sskey": "AbcqweW112",
+    "ssm": "aes-256-ctr",
+    "timeout": "300"
   }
 }
