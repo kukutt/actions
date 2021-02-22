@@ -1,6 +1,9 @@
 name: test
 
-on: push
+on: 
+    repository_dispatch:
+        type:
+        - ci
 
 jobs:
   build:
