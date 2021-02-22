@@ -1,0 +1,15 @@
+name: test
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+# 检出版本库
+    - name: Checkout
+      uses: actions/checkout@v2
+
+# 运行脚本
+    - name: Run Shell Script
+      run: echo "aaaaa"
