@@ -1,18 +1,16 @@
-name: test
+name: Test
 
-on: 
-    repository_dispatch:
-        type:
-        - ci
+on:
+  repository_dispatch:
+    type:
+      - ci
 
 jobs:
-  build:
-    runs-on: ubuntu-18.04
-    steps:
-# 检出版本库
-    - name: Checkout
-      uses: actions/checkout@v2
+  dispatcher:
+    runs-on: ubuntu-latest
 
-# 运行脚本
-    - name: Run Shell Script
-      run: echo "aaaaa"
+    steps:
+      - name: Payload params
+        run: |
+          echo "Ref: ${{ github.event.client_payload.ref }}"
+          echo "Commit: ${{ github.event.client_payload.sha }}"
