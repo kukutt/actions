@@ -1,9 +1,6 @@
 name: Actions
 
-on:
-  repository_dispatch:
-    type:
-      - auto
+on: repository_dispatch
 
 jobs:
   build:

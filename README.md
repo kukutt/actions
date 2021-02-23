@@ -8,7 +8,7 @@ github actions编译脚本, 实现api调用不同的shell执行不同功能
 通过api调用POST /repos/:owner/:repo/dispatches  
 ```shell
 #$user:用户名  
-#$password:密码
+#$password:token, setting-> Developer settings -> [set]workflow
 #$repo:库名
 #$shell:运行shell脚本
 #$param:参数,json格式
