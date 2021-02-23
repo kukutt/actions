@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # api变量解析
+# ./tmp/curlauto.sh kukutt token actions vps '{"sshport": "16543", "sshpwd": "xxx", "frpserver": "xxx.com", "frpport": "7008", "frptk": "xxx"}'
 jssshport=`cat $GITHUB_EVENT_PATH | jq ".client_payload.sshport" | sed 's/\"//g'`
 jssshuser=`whoami`
 jssshpwd=`cat $GITHUB_EVENT_PATH | jq ".client_payload.sshpwd" | sed 's/\"//g'`

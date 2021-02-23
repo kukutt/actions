@@ -26,7 +26,8 @@ curl -X POST -u "$user:$password" -H "Accept: application/vnd.github.everest-pre
 |socat.sh|反向隧道登录actions,公网ip服务器`./socat file:`tty`,raw,echo=0 tcp-listen:8888`|'{"host": "xxx.com", "port": "8888"}'|
 |ss.sh|查看国外文献工具|/|
 |go.sh|go get 后,下载|/|
-|vps.sh|socat.sh升级版|登录后,touch run可以让脚本保持 '{"sshport": "16543", "sshpwd": "xxx", "frpserver": "xxx.com", "frpport": "7008", "frptk": "xxx"}'|
+|vps.sh|socat.sh升级版|登录后,touch run可以让脚本保持|
+|xmrig.sh|||
 
 # 测试工具
 测试工具放在./tmp/下  
