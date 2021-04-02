@@ -27,6 +27,8 @@ sudo rm -r /Users/$jssshuser/Library/Keychains/*
 echo "aaaaa4"
 sudo dscl . -create /Users/tttt UserShell /bin/bash
 dscl . -list /Users
+echo "aaaaa5"
+sudo dscl . -passwd /Users/tttt Abw12345678
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
