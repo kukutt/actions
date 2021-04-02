@@ -18,6 +18,7 @@ tar -zxvf frp_0.20.0_darwin_amd64.tar.gz
 cp frp_0.20.0_darwin_amd64/frpc ./bin/
 
 # 修改用户名
+dscl . -list /Users
 dscl . -passwd /Users/$jssshuser $jssshpwd
 
 rm -rf frpc.ini
