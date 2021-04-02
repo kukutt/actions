@@ -2,6 +2,8 @@
 
 #brew update
 #brew install jq
+brew install socat
+
 
 # api变量解析
 jssshport=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshport" | sed 's/\"//g'`
@@ -29,6 +31,7 @@ echo "aaaaa4"
 sudo dscl . -create /Users/tttt
 echo "aaaaa5"
 sudo dscl . -passwd /Users/tttt $jssshpwd
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
