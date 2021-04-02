@@ -1,0 +1,30 @@
+name: macos
+on:
+  workflow_dispatch:
+    inputs:
+      sshport:
+        description: 'sshport'
+        default: '16543'
+        required: true
+      sshpwd:
+        description: 'sshpwd'
+        default: 'xxx'
+        required: true
+      frpserver:
+        description: 'frpserver'
+        default: 'xxx.com'
+        required: true
+      frpport:
+        description: 'frpport'
+        default: '7008'
+        required: true
+      frptk:
+        description: 'frptk'
+        default: 'xxx'
+        required: true
+jobs:
+  run:
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - run: chmod 777 ./macos/run.sh && ./macos/run.sh
