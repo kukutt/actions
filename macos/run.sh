@@ -22,8 +22,11 @@ echo "aaaaa1"$jssshuser
 dscl . -list /Users
 echo "aaaaa2"
 sudo rm -r /Users/$jssshuser/Library/Keychains/*
-echo "aaaaa3"
-sudo dscl . -passwd /Users/$jssshuser $jssshpwd
+#echo "aaaaa3"
+#sudo dscl . -passwd /Users/$jssshuser $jssshpwd
+echo "aaaaa4"
+sudo dscl . -create /Users/tttt UserShell /bin/bash
+dscl . -list /Users
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
