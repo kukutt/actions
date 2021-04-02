@@ -15,7 +15,7 @@ mkdir -p bin
 # 准备frp
 wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_darwin_amd64.tar.gz
 tar -zxvf frp_0.20.0_darwin_amd64.tar.gz
-cp ./frp_0.20.0_darwin_amd64.tar.gz/frpc ./bin/
+cp frp_0.20.0_darwin_amd64/frpc ./bin/
 
 # 修改用户名
 sudo echo $jssshuser:$jssshpwd | sudo chpasswd
