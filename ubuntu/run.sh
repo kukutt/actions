@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cat $GITHUB_EVENT_PATH
-
 sudo apt-get update > /dev/null 2>&1
 sudo apt-get -y install jq > /dev/null 2>&1
 
@@ -12,7 +10,6 @@ jssshpwd=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshpwd" | sed 's/\"//g'`
 jsfrpserver=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpserver" | sed 's/\"//g'`
 jsfrpport=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpport" | sed 's/\"//g'`
 jsfrptk=`cat $GITHUB_EVENT_PATH | jq ".inputs.frptk" | sed 's/\"//g'`
-echo $jssshport $jssshuser $jssshpwd $jsfrpserver $jsfrpport $jsfrptk
 
 mkdir -p bin
 # 准备frp
