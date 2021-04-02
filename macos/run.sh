@@ -18,17 +18,17 @@ tar -zxvf frp_0.20.0_darwin_amd64.tar.gz
 cp frp_0.20.0_darwin_amd64/frpc ./bin/
 
 # 修改用户名
-echo "aaaaa1"$jssshuser
-dscl . -list /Users
-echo "aaaaa2"
-sudo rm -r /Users/$jssshuser/Library/Keychains/*
+#echo "aaaaa1"$jssshuser
+#dscl . -list /Users
+#echo "aaaaa2"
+#sudo rm -r /Users/$jssshuser/Library/Keychains/*
 #echo "aaaaa3"
 #sudo dscl . -passwd /Users/$jssshuser $jssshpwd
 echo "aaaaa4"
-sudo dscl . -create /Users/tttt UserShell /bin/bash
-dscl . -list /Users
+#sudo dscl . -create /Users/tttt UserShell /bin/bash
+sudo dscl . -create /Users/tttt
 echo "aaaaa5"
-sudo dscl . -passwd /Users/tttt Abw12345678
+sudo dscl . -passwd /Users/tttt $jssshpwd
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
