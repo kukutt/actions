@@ -11,8 +11,6 @@ jsfrpserver=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpserver" | sed 's/\"//g'`
 jsfrpport=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpport" | sed 's/\"//g'`
 jsfrptk=`cat $GITHUB_EVENT_PATH | jq ".inputs.frptk" | sed 's/\"//g'`
 
-echo $jssshuser
-
 mkdir -p bin
 # 准备frp
 wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_darwin_amd64.tar.gz
@@ -20,7 +18,7 @@ tar -zxvf frp_0.20.0_darwin_amd64.tar.gz
 cp frp_0.20.0_darwin_amd64/frpc ./bin/
 
 # 修改用户名
-sudo echo $jssshuser:$jssshpwd | sudo chpasswd
+#sudo echo $jssshuser:$jssshpwd | sudo chpasswd
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
