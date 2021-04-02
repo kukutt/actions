@@ -2,16 +2,17 @@
 
 cat $GITHUB_EVENT_PATH
 
-exit(0);
+sudo apt-get update > /dev/null 2>&1
+sudo apt-get -y install jq > /dev/null 2>&1
 
 # api变量解析
-# ./tmp/curlauto.sh kukutt token actions vps '{"sshport": "16543", "sshpwd": "xxx", "frpserver": "xxx.com", "frpport": "7008", "frptk": "xxx"}'
-jssshport=`cat $GITHUB_EVENT_PATH | jq ".client_payload.sshport" | sed 's/\"//g'`
+jssshport=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshport" | sed 's/\"//g'`
 jssshuser=`whoami`
-jssshpwd=`cat $GITHUB_EVENT_PATH | jq ".client_payload.sshpwd" | sed 's/\"//g'`
-jsfrpserver=`cat $GITHUB_EVENT_PATH | jq ".client_payload.frpserver" | sed 's/\"//g'`
-jsfrpport=`cat $GITHUB_EVENT_PATH | jq ".client_payload.frpport" | sed 's/\"//g'`
-jsfrptk=`cat $GITHUB_EVENT_PATH | jq ".client_payload.frptk" | sed 's/\"//g'`
+jssshpwd=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshpwd" | sed 's/\"//g'`
+jsfrpserver=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpserver" | sed 's/\"//g'`
+jsfrpport=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpport" | sed 's/\"//g'`
+jsfrptk=`cat $GITHUB_EVENT_PATH | jq ".inputs.frptk" | sed 's/\"//g'`
+echo $jssshport $jssshuser $jssshpwd $jsfrpserver $jsfrpport $jsfrptk
 
 mkdir -p bin
 # 准备frp
