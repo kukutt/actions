@@ -27,4 +27,4 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
-    - run: ./manual/vps.sh
+    - run: ./ubuntu/run.sh
