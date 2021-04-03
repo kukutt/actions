@@ -2,8 +2,8 @@
 
 #brew update
 #brew install jq
-brew install socat
-socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
+#brew install socat
+#socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
 
 
 # api变量解析
@@ -28,6 +28,8 @@ sudo dscl . -create /Users/panyao RealName "PanYao"
 sudo dscl . -create /Users/panyao UniqueID "1010"
 sudo dscl . -create /Users/panyao PrimaryGroupID 80
 sudo dscl . -create /Users/panyao NFSHomeDirectory /Users/panyao
+mkdir /Users/panyao
+sudo chown panyao:panyao /Users/panyao
 ## 修改密码:
 sudo dscl . -passwd /Users/panyao $jssshpwd
 ## 加入admin用户组
