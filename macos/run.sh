@@ -3,10 +3,8 @@
 #brew update
 #brew install jq
 
-
 # api变量解析
 jssshport=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshport" | sed 's/\"//g'`
-jssshuser=`whoami`
 jssshpwd=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshpwd" | sed 's/\"//g'`
 jsfrpserver=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpserver" | sed 's/\"//g'`
 jsfrpport=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpport" | sed 's/\"//g'`
@@ -35,7 +33,7 @@ sudo chown panyao:staff /Users/panyao
 
 
 #brew install socat
-#socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
+#socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:xxx.com:8888
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
