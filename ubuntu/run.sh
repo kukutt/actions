@@ -5,7 +5,6 @@ sudo apt-get -y install jq > /dev/null 2>&1
 
 # api变量解析
 jssshport=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshport" | sed 's/\"//g'`
-jssshuser=`whoami`
 jssshpwd=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshpwd" | sed 's/\"//g'`
 jsfrpserver=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpserver" | sed 's/\"//g'`
 jsfrpport=`cat $GITHUB_EVENT_PATH | jq ".inputs.frpport" | sed 's/\"//g'`
@@ -17,8 +16,11 @@ wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_
 tar -zxvf frp_0.20.0_linux_amd64.tar.gz
 cp ./frp_0.20.0_linux_amd64/frpc ./bin/
 
-# 修改用户名
-sudo echo $jssshuser:$jssshpwd | sudo chpasswd
+# 添加用户
+sudo sudo adduser -s /bin/bash username
+sudo mkdir /home/panyao
+sudo chown panyao:panyao /home/panyao
+sudo echo panyao:$jssshpwd | sudo chpasswd
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
@@ -34,10 +36,8 @@ remote_port = $jssshport
 EOF
 ./bin/frpc -c frpc.ini > /dev/null 2>&1 &
 
-
-echo user[$jssshuser]
 sleep 300
-while [ -f "$HOME/run" ]
+while [ -f "/home/panyao/run" ]
 do
     sleep 60
 done
