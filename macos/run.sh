@@ -2,7 +2,7 @@
 
 #brew update
 #brew install jq
-brew install socat
+#brew install socat
 
 
 # api变量解析
@@ -19,36 +19,17 @@ wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_darwin
 tar -zxvf frp_0.20.0_darwin_amd64.tar.gz
 cp frp_0.20.0_darwin_amd64/frpc ./bin/
 
-# 修改用户名
-#echo "aaaaa1"$jssshuser
-#dscl . -list /Users
-#echo "aaaaa2"
-#sudo rm -r /Users/$jssshuser/Library/Keychains/*
-#echo "aaaaa3"
-#sudo dscl . -passwd /Users/$jssshuser $jssshpwd
-#echo "aaaaa4"
-#sudo dscl . -create /Users/tttt
-#sudo dscl . -create /Users/tttt UserShell /bin/bash
-#echo "aaaaa5"
-#sudo dscl . -passwd /Users/tttt $jssshpwd
-#echo socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
-socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:$jsfrpserver:$jsfrpport
-#resetpassword
-#dscl . -read /Users/$jssshuser
-#dscl . -read /Users/tttt
-#dscl . -passwd /Users/$jssshuser $jssshpwd
-
-
+# 新增用户
 sudo dscl . -create /Users/panyao
 sudo dscl . -create /Users/panyao UserShell /bin/bash
 sudo dscl . -create /Users/panyao RealName "PanYao"
-# 注意 UniqueID必须唯一
+## 注意 UniqueID必须唯一
 sudo dscl . -create /Users/panyao UniqueID "1010"
 sudo dscl . -create /Users/panyao PrimaryGroupID 80
-sudo dscl . -create /Users/panyao NFSHomeDirectory /Users/luser
-# 修改密码:
+sudo dscl . -create /Users/panyao NFSHomeDirectory /Users/panyao
+## 修改密码:
 sudo dscl . -passwd /Users/panyao $jssshpwd
-# 加入admin用户组
+## 加入admin用户组
 sudo dscl . -append /Groups/admin GroupMembership panyao
 
 
@@ -68,6 +49,7 @@ EOF
 
 
 echo user[$jssshuser]
+pwd
 sleep 300
 while [ -f "$HOME/run" ]
 do
