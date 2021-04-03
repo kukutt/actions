@@ -27,7 +27,7 @@ sudo dscl . -create /Users/panyao UniqueID "1010"
 sudo dscl . -create /Users/panyao PrimaryGroupID 80
 sudo dscl . -create /Users/panyao NFSHomeDirectory /Users/panyao
 sudo mkdir /Users/panyao
-sudo chown panyao:panyao /Users/panyao
+#sudo chown panyao:panyao /Users/panyao
 ## 修改密码:
 sudo dscl . -passwd /Users/panyao $jssshpwd
 ## 加入admin用户组
