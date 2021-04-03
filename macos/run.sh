@@ -2,7 +2,8 @@
 
 #brew update
 #brew install jq
-#brew install socat
+brew install socat
+socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp::8888
 
 
 # api变量解析
