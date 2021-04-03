@@ -3,10 +3,6 @@
 sudo apt-get update > /dev/null 2>&1
 sudo apt-get -y install jq > /dev/null 2>&1
 
-echo "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb1"
-sudo cat /etc/shadow
-echo "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2"
-
 # api变量解析
 jssshport=`cat $GITHUB_EVENT_PATH | jq ".inputs.sshport" | sed 's/\"//g'`
 jssshuser=`whoami`
