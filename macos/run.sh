@@ -31,7 +31,7 @@ sudo mkdir /Users/panyao
 sudo dscl . -passwd /Users/panyao $jssshpwd
 ## 加入admin用户组
 sudo dscl . -append /Groups/staff GroupMembership panyao
-sudo chown panyao:panyao /Users/panyao
+sudo chown panyao:staff /Users/panyao
 
 
 brew install socat
