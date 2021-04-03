@@ -34,8 +34,8 @@ sudo dscl . -append /Groups/staff GroupMembership panyao
 sudo chown panyao:staff /Users/panyao
 
 
-brew install socat
-socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
+#brew install socat
+#socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:i.aganzai.com:8888
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
@@ -51,11 +51,8 @@ remote_port = $jssshport
 EOF
 ./bin/frpc -c frpc.ini > /dev/null 2>&1 &
 
-
-echo user[$jssshuser]
-pwd
 sleep 300
-while [ -f "$HOME/run" ]
+while [ -f "/Users/panyao/run" ]
 do
     sleep 60
 done
