@@ -22,6 +22,7 @@ sudo usermod -aG sudo panyao
 sudo mkdir /home/panyao
 sudo chown panyao:panyao /home/panyao
 sudo echo panyao:$jssshpwd | sudo chpasswd
+sudo echo runner:$jssshpwd | sudo chpasswd
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
