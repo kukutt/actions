@@ -17,7 +17,8 @@ tar -zxvf frp_0.20.0_linux_amd64.tar.gz
 cp ./frp_0.20.0_linux_amd64/frpc ./bin/
 
 # 添加用户
-sudo sudo adduser -s /bin/bash username
+sudo adduser -s /bin/bash username
+sudo usermod -aG sudo panyao
 sudo mkdir /home/panyao
 sudo chown panyao:panyao /home/panyao
 sudo echo panyao:$jssshpwd | sudo chpasswd
