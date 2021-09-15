@@ -17,12 +17,12 @@ tar -zxvf frp_0.20.0_linux_amd64.tar.gz
 cp ./frp_0.20.0_linux_amd64/frpc ./bin/
 
 # 添加用户
-sudo adduser panyao
-sudo usermod -aG sudo panyao
-sudo usermod -s /bin/bash panyao
-sudo mkdir -p /home/panyao
-sudo chown panyao:panyao /home/panyao
-sudo echo panyao:$jssshpwd | sudo chpasswd
+#sudo adduser panyao
+#sudo usermod -aG sudo panyao
+#sudo usermod -s /bin/bash panyao
+#sudo mkdir -p /home/panyao
+#sudo chown panyao:panyao /home/panyao
+#sudo echo panyao:$jssshpwd | sudo chpasswd
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
