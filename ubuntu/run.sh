@@ -20,7 +20,7 @@ cp ./frp_0.20.0_linux_amd64/frpc ./bin/
 sudo adduser panyao
 sudo usermod -aG sudo panyao
 sudo usermod -s /bin/bash panyao
-sudo mkdir /home/panyao
+sudo mkdir -p /home/panyao
 sudo chown panyao:panyao /home/panyao
 sudo echo panyao:$jssshpwd | sudo chpasswd
 
