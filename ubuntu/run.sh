@@ -23,6 +23,9 @@ cp ./frp_0.20.0_linux_amd64/frpc ./bin/
 #sudo mkdir -p /home/panyao
 #sudo chown panyao:panyao /home/panyao
 #sudo echo panyao:$jssshpwd | sudo chpasswd
+jssshuser=`whoami`
+sudo echo $jssshuser:$jssshpwd | sudo chpasswd
+echo $jssshuser
 
 rm -rf frpc.ini
 cat >> frpc.ini <<EOF
