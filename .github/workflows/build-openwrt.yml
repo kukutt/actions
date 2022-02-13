@@ -21,7 +21,7 @@ on:
         required: true
       buildpath:
         description: 'buildpath'
-        default: 'ipt/usefull/openwrt/'
+        default: 'usefull/openwrt/'
         required: true
         
 jobs:
