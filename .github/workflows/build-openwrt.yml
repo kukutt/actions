@@ -37,7 +37,7 @@ jobs:
         token: ${{ github.event.inputs.token }}
         path: tools
     - name: CP
-      run: cp -raf ${{ github.event.inputs.toolpath }} ./openwrt/
+      run: cp -raf tools/${{ github.event.inputs.toolpath }} ./openwrt/
     #- name: Build-${{ github.event.inputs.devtype }}
     #  run: pushd ./openwrt/ ; ./autobuild.sh ${{ github.event.inputs.devtype }}; popd
     - name: LS
