@@ -1,0 +1,32 @@
+name: Build-openwrt
+on:
+  workflow_dispatch:
+    inputs:
+      devtype:
+        description: 'dev'
+        default: '7800'
+        required: true
+        type: choice
+        options:
+        - '7688'
+        - 'mimini'
+        - 'k3'
+        - '7800'
+jobs:
+  run:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build-${{ github.event.inputs.devtype }}
+      run: pushd ./openwrt/ ; ./autobuild.sh ${{ github.event.inputs.devtype }}; popd
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2.1.0
+      with:
+        name: ffffff
+        path: ./openwrt/in
+    - name: Upload artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: outfile-${{ github.event.inputs.devtype }}
+        path: ./openwrt/output
