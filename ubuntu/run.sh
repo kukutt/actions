@@ -32,7 +32,7 @@ cat >> frpc.ini <<EOF
 [common]
 server_addr = $jsfrpserver
 server_port = $jsfrpport
-privilege_token = $jsfrptk
+token = $jsfrptk
 [ss_actions_ssh]
 type = tcp
 local_ip = 127.0.0.1
