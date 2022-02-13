@@ -15,9 +15,14 @@ on:
       token:
         description: 'token'
         required: true
+      repository:
+        description: 'repository'
+        default: 'kukutt/ipt'
+        required: true
       toolpath:
         description: 'toolpath'
-        #required: true
+        default: 'usefull/openwrt/tip/files/'
+        required: true
         
 jobs:
   run:
@@ -28,7 +33,7 @@ jobs:
     - name: Checkout-tools
       uses: actions/checkout@v2
       with:
-        repository: my-org/my-private-tools
+        repository: ${{ github.event.inputs.repository }}
         token: ${{ github.event.inputs.token }};
         path: tools
     - name: CP
