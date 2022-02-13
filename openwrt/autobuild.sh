@@ -28,7 +28,7 @@ fi
 
 # 配置
 if [ ! -d "./files" ];then
-    mkdir ./files
+    ln -s ../files ./files
 fi
 
 . ../cfg.sh $1
