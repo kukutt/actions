@@ -34,7 +34,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: ${{ github.event.inputs.repository }}
-        token: ${{ github.event.inputs.token }};
+        token: ${{ github.event.inputs.token }}
         path: tools
     - name: CP
       run: cp -raf ${{ github.event.inputs.toolpath }} ./openwrt/
