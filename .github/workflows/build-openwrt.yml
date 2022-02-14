@@ -12,6 +12,8 @@ on:
         - 'mimini'
         - 'k3'
         - '7800'
+        - 'dir505'
+        - '58u'
       token:
         description: 'token'
         required: true
