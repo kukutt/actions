@@ -35,8 +35,8 @@ jobs:
       with:
         repository: ${{ github.event.inputs.repository }}
         token: ${{ github.event.inputs.token }}
-    - name: LS
-      run: ls -l ./
+    - name: Log see
+      run: ls -l ./ && git log -n 1
     - name: Build-${{ github.event.inputs.devtype }}
       run: pushd ./${{ github.event.inputs.buildpath }} ; ./autobuild.sh ${{ github.event.inputs.devtype }}; popd
     - name: Upload artifact
